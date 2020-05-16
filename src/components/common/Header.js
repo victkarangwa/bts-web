@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../assets/styles/style.scss'
 
 
@@ -12,16 +13,16 @@ const Header = () => {
         <div className='nav-menu'>
           <ul>
             <li>
-              <a href='#home'>Home</a>
+              <Link to='/'>Home</Link>
             </li>
             <li>
-              <a href='#news'>About us</a>
+              <Link to='/about'>About us</Link>
             </li>
             <li>
-              <a href='#contact'>Events</a>
+              <Link to='/events'>Events</Link>
             </li>
             <li>
-              <a href='#about'>Contact</a>
+              <Link to='/contact'>Contact</Link>
             </li>
           </ul>
         </div>

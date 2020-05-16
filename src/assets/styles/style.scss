@@ -1,0 +1,233 @@
+$dark-color: #343434;
+$blue-color: #4182ff;
+$orange-color: #e68b4c;
+$white-color: #ffffff;
+$gray-color: #a0a0a0;
+
+.page-container {
+  height: 100vh;
+  .page-body {
+    .landing {
+      background-image: url('../images/bts_bg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      .overlay {
+        height: 100vh;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.664);
+      }
+    }
+    .landing-txt {
+      padding-top: 200px;
+      padding-left: 70px;
+      width: 480px;
+      .txt-header {
+        font-size: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+      }
+      .txt-detail {
+        font-size: 20px;
+        font-family: Ap;
+        color: white;
+        font-weight: lighter;
+      }
+    }
+    .project-img {
+      width: 100%;
+    }
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .card-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 50px;
+  }
+  .square-card {
+    width: 300px;
+    height: 300px;
+    background-color: $white-color;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+  .sm-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .md-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .lg-icon {
+    width: 80px;
+    height: 80px;
+  }
+  .icon-section{
+    text-align: center;
+    padding: 20px 20px 0 20px;
+  }
+  .main-header{
+    width: 100%;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+  }
+  .upper-txt{
+    text-transform: uppercase;
+  }
+  .details-sections{
+    padding: 10px;
+    text-align: center;
+  }
+  .rectangular-card {
+    width: 300px;
+    height: 450px;
+    background-color: $white-color;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    .project-user-action {
+      .project-opt {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .label-txt {
+          padding: 8px 22px 8px 0;
+          color: rgb(90, 90, 90);
+          display: flex;
+          align-items: center;
+          img {
+            padding: 5px;
+          }
+        }
+      }
+    }
+    .project-details {
+      padding: 20px 13px;
+      text-align: left;
+    }
+  }
+  .header-txt {
+    padding-top: 10px;
+  }
+  .pictorial-card {
+    width: 300px;
+    height: 200px;
+    background-color: burlywood;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .circle-img {
+    border-radius: 100px;
+    height: 80px;
+    width: 80px;
+  }
+  .center-txt {
+    text-align: center;
+    h2 {
+      font-weight: bolder;
+    }
+  }
+  .full-card {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    .testimony {
+      width: 45%;
+      height: 190px;
+      margin: 10px;
+      display: flex;
+      .testimony-img {
+        padding: 20px;
+      }
+      .testimony-details {
+        padding: 20px;
+        font-size: 14px;
+        p {
+          margin: 0;
+        }
+        .testimony-owner {
+          font-size: 13px;
+          color: $gray-color;
+          text-align: right;
+          padding-top: 10px;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .sub-header {
+    color: $orange-color;
+  }
+  .header-section {
+    background-color: $dark-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    .nav-logo {
+      padding-top: 15px;
+      color: $orange-color;
+      font-weight: bolder;
+    }
+    .nav-menu {
+      ul {
+        list-style-type: none;
+      }
+
+      li {
+        display: inline;
+        padding: 0 30px;
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+  .footer-section {
+    text-align: center;
+    height: 330px;
+    background-color: $dark-color;
+    color: rgb(124, 124, 124);
+    label {
+      font-size: 13px;
+    }
+    .info-section {
+      display: flex;
+      justify-content: space-around;
+      font-family: Ap;
+      margin-top: 40px;
+      .footer-sub-section {
+        width: 300px;
+        text-align: left;
+        h2 {
+          color: white;
+        }
+        .sub-details {
+          color: $gray-color;
+          text-align: left;
+          ul {
+            li {
+              padding: 10px;
+              list-style: none;
+              a {
+                color: inherit;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

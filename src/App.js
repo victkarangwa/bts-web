@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
-import Index from './components';
+import Index from './components/landing';
+import './assets/styles/index.scss';
 
 function App() {
   return (

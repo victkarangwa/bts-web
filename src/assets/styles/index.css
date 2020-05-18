@@ -1,13 +1,129 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.contact-page-container {
+  display: flex;
+  flex-direction: column;
+}
+.header-image-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62)),
+    url("../images/children-photo.png");
+   background-size: cover;
+  height: 200px;
+  width: 100%;
+  color: white;
+}
+.header-image-container h4 {
+  text-align: center;
+  margin-top: 5%;
+  font-size: 40px;
+  font-family: "Dosis", Arial, sans-serif;
+}
+.contact-section-title p {
+  font-family: Apple Symbols;
+  font-size: 30px;
+
+}
+.contact-info {
+  display: flex;
+  flex-direction: row;
+}
+.contact-information {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-row-gap: 30px;
+ 
+
+}
+.contact-title{
+  font-weight: bold;
+}
+.addres-info{
+color: gray;
+}
+.addres-info2{
+  color: #fa8f3d;
+}
+.form-section{
+  display: flex;
+  flex-direction: column;
+  
+
+}
+.form-section div p{
+  font-family: Apple Symbols;
+  font-size: 30px;
+}
+.main-page{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.contact-section{
+  margin-right: 10%;
+}
+
+@media screen and (max-width: 780px) {
+  .main-page{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+
+  }
+  .header-image-container {
+    height: 100px;
+  }
+  .header-image-container h4 {
+    font-size: 20px;
+    margin-top: 10%;
+  }
+  .contact-section{
+    margin-left: 25%;
+  }
+  .contact-section-title p {
+
+    font-size: 22px;
+  
+  }
+  .contact-information {
+    grid-row-gap: 19px;
+  }
+  .contact-info{
+    font-size: 14px;
+  }
+  .form-section div p{
+    font-size: 22px;
+  }
+  .form-section{
+margin-left: 8%;
+    
+  
+  }
+
+}
+@media screen and (max-width: 320px) {
+ 
+  .form-section div p{
+    font-size: 20px;
+  }
+  .form-section{
+margin-left: 3%;
+    
+  }
+  .contact-section-title p {
+
+    font-size: 20px;
+  
+  }
+
 }

@@ -48,7 +48,10 @@ return (
         </div>
       </div>
     </div>
+    <div className="copy-section">
+
     <label>Copyright &copy; 2020 BTS</label>
+    </div>
   </div>
 );
 

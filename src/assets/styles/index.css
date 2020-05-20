@@ -127,5 +127,265 @@ margin-left: 3%;
     font-size: 20px;
   
   }
+}
+.about-header {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.82),  rgba(0, 0, 0, 0.82)),
+    url("../images/chilidren.jpg");
+    background-size: cover;
+  height: 259px;
+  width: 100%;
+  color: white;
+}
+.aboutImage {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 97, 174, 0.61);
+}
+.about-txt-title {
+  margin-left: 60%;
+}
+.about-txt-title h3 {
+  font-size: 25px;
+}
+.about-txt-title p {
+  font-size: 23px;
+  font-size: 23px;
+  line-height: 27px;
+  text-transform: uppercase;
+}
+.about-page {
+  display: flex;
+  flex-direction: column;
+}
+.mission-left-section-item {
+  margin-left: 7%;
+  width:285px;
+  height:330px;
+}
+.mission-section{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+.mission-section-txt-container{
+  margin-left: 20%;
+}
+.mission-section-container-avatar{
+  margin-left: 8%;
+}
+.mission-section-txt h3 {
+  color: #747070;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 47px;
+}
+.mission-section-txt p {
+  font-family: Apple Symbols;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 30px;
 
+  color: #000000;
+}
+.story-section{
+  display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
+.story-section-txt h3 {
+  color: #747070;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 47px;
+  margin-left: 15%;
+}
+.story-section-txt p {
+  font-family: Apple Symbols;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 23px;
+  line-height: 30px;
+  margin-left: 5%;
+  color: #000000;
+}
+.story-section-container-avatar{
+  margin-right: 5%;
+}
+.story-section-txt-container{
+  margin-left: 3%;
+  width: 35%;
+}
+.story-right-section-item{
+  width:585px;
+  height:330p;
+}
+.card-container{
+  display: flex;
+  margin-left: 2%;
+}
+.card {
+  width: 460px;
+  height: 188px;
+  background: #fafafa;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.card1 {
+  width: 460px;
+  height: 230px;
+  background: #fafafa;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+.card2 {
+  width: 460px;
+  height: 230px;
+  background: #fafafa;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+.card3 {
+  width: 460px;
+  height: 230px;
+  background: #fafafa;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+.card1 h6{
+  font-size: 23px;
+line-height: 35px;
+}
+.card2 h6{
+  font-size: 23px;
+line-height: 35px;
+}
+.card3 h6{
+  font-size: 23px;
+line-height: 35px;
+}
+.card1 p{
+  font-family: Apple Symbols;
+  font-size: 20px;
+}
+.card2 p{
+  font-family: Apple Symbols;
+  font-size: 20px;
+}
+.card3 p{
+  font-family: Apple Symbols;
+  font-size: 20px;
+}
+@media screen and (max-width: 780px) {
+  .about-txt-title {
+    margin-left: 5%;
+  }
+  .about-txt-title h3 {
+    font-size: 16px;
+  }
+  .about-txt-title p {
+    font-size: 15px;
+    
+  }
+  .about-header {
+    height: 150px;
+    width: 100%;
+  }
+  .mission-section{
+    display: flex;
+    flex-direction: column-reverse;
+    
+    }
+    .mission-section-txt-container{
+      margin-left: 5%;
+    }
+    .mission-section-container-avatar{
+      margin-left: 20%;
+    }
+    .mission-section-txt h3 {
+      font-size: 20px;
+
+    }
+    .mission-section-txt p{
+      font-size: 17px;
+      line-height: 25px;
+    }
+    .mission-left-section-item {
+      width:185px;
+      height:230px;
+    }
+    .story-section{
+      display: flex;
+    flex-direction: column;
+
+
+    }
+    .story-section-txt-container{
+width: 100%;
+    }
+    .story-section-txt h3 {
+      font-size: 20px;
+      line-height: 47px;
+      margin-left: 2%;
+    }
+    .story-section-txt p {
+
+      font-size: 17px;
+      line-height: 25px;
+      margin-left: 2%;
+      color: #000000;
+    }
+    .story-right-section-item{
+      width:285px;
+      height:330p;
+    }
+    .story-section-container-avatar{
+      margin-left: 7%;
+      margin-right: 0%;
+    }
+    .card-container{
+      display: flex;
+      flex-direction: column;
+      margin-left: 2%;
+    }
+    .card1 {
+      width: 100%;
+      height: 230px;
+      margin-bottom: 2%;
+    
+    }
+    .card2 {
+      width: 100%;
+      height: 230px;
+      margin-bottom: 2%;
+
+    }
+    .card3 {
+      width: 100%;
+      height: 230px;
+      margin-bottom: 2%;
+    }
+    .card1 h6{
+      font-size: 15px;
+    line-height: 35px;
+    }
+    .card2 h6{
+      font-size: 15px;
+    line-height: 35px;
+    }
+    .card3 h6{
+      font-size: 15px;
+    line-height: 35px;
+    }
+    .card1 p{
+      font-family: Apple Symbols;
+      font-size: 18px;
+    }
+    .card2 p{
+      font-family: Apple Symbols;
+      font-size: 18px;
+    }
+    .card3 p{
+      font-family: Apple Symbols;
+      font-size: 18px;
+    }
 }

@@ -5,6 +5,7 @@ import './assets/styles/index.scss';
 import Contact from './components/contact/index';
 // import Index from './components';
 import About from './components/about/index';
+import Event from './components/events/index';
 
 function App() {
   return (
@@ -13,8 +14,8 @@ function App() {
         <Switch>
         <Route path='/' exact component={Index} />
           <Route path='/contact' exact component={Contact} />
-          {/* <Route path='/' exact component={Index} /> */}
           <Route path='/about' component={About} />
+          <Route path='/events' exact component={Event}/>
         </Switch>
       </div>
     </Router>

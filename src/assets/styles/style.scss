@@ -75,6 +75,17 @@ $gray-color: #a0a0a0;
       height: 100%;
     }
   }
+  .txt-lg{
+    color: $orange-color;
+    font-size: 40px;
+    font-weight: bolder;
+    margin: 0 !important;
+    padding-top:20px;
+  }
+  .headings{
+margin: 40px 0 0 0  !important;
+font-weight: bolder !important;
+  }
   .sm-icon {
     width: 20px;
     height: 20px;

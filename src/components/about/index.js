@@ -87,15 +87,15 @@ const About = ({ donateModal, modal }) => {
         <Box m={3} />
         <div className='card-container'>
           <div className='card1'>
-            <h6>Served over</h6>
+            <h6 className='headings'>Served over</h6>
 
-            <p>600</p>
+            <p className='txt-lg'>600</p>
 
             <p>Childrens and families from Rwanda</p>
           </div>
 
           <div className='card2'>
-            <h6>Donate money</h6>
+            <h6 className='headings'>Donate money</h6>
 
             <p>You can make one person happy </p>
 
@@ -105,11 +105,13 @@ const About = ({ donateModal, modal }) => {
           </div>
 
           <div className='card3'>
-            <h6>Become a member</h6>
+            <h6 className='headings'>Become a member</h6>
 
             <p>You can make one person happy</p>
 
-            <Button href="/membership/apply" className={classes.button}>Become a member</Button>
+            <Button href='/membership/apply' className={classes.button}>
+              Become a member
+            </Button>
           </div>
         </div>
       </div>

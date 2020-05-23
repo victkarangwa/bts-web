@@ -9,6 +9,8 @@ import {
   Button,
   Checkbox,
   FormControlLabel,
+  CircularProgress,
+  Backdrop,
 } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
@@ -114,11 +116,16 @@ const useStyles = makeStyles((theme) => ({
       margin: '15px 0',
     },
   },
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: '#fff',
+  },
 }));
 const Index = ({ becomeMember }) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const [checked, setChecked] = React.useState(true);
+  const [OpenBackdrop, setOpenBackdrop] = React.useState(false);
   const [userRequest, setuserRequest] = React.useState({
     firstName: '',
     lastName: '',
@@ -132,6 +139,9 @@ const Index = ({ becomeMember }) => {
     reason: '',
     gotFrom: '',
   });
+    const handleClose = () => {
+      setOpenBackdrop(false);
+    };
   const handleInput = (e) => {
     const { name, value } = e.target;
 
@@ -178,9 +188,9 @@ const Index = ({ becomeMember }) => {
     setValue(newValue);
   };
   const handleSubmit = () => {
-    console.log(userRequest);
-    
+    setOpenBackdrop(true);
     becomeMember(userRequest);
+    handleClose();
   };
 
   return (
@@ -379,16 +389,17 @@ const Index = ({ becomeMember }) => {
             </TabPanel>
           </div>
         </div>
-
+        <Backdrop className={classes.backdrop} open={OpenBackdrop}>
+          <CircularProgress color='inherit' />
+        </Backdrop>
         <Footer />
       </div>
     </div>
   );
 };
-const mapStateToProps = (state) =>{
-
-  return{
-    membership: state.membership
-  }
-}
-export default connect(mapStateToProps, {becomeMember})(Index);
+const mapStateToProps = (state) => {
+  return {
+    membership: state.membership,
+  };
+};
+export default connect(mapStateToProps, { becomeMember })(Index);

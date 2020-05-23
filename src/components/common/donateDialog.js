@@ -7,7 +7,6 @@ import {
   Button,
   Backdrop,
   CircularProgress,
-  Snackbar,
 } from '@material-ui/core';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -223,19 +222,9 @@ const Donate = ({ donateModal, sendDonation }) => {
         <Backdrop
           className={classes.backdrop}
           open={OpenBackdrop}
-          // onClick={handleClose}
         >
           <CircularProgress color='inherit' />
         </Backdrop>
-        <Snackbar
-          open={openAlert}
-          autoHideDuration={5000}
-          onClose={handleClose}
-        >
-          <Alert onClose={handleClose} severity='info'>
-            Thank you for sending me this offer!
-          </Alert>
-        </Snackbar>
       </Dialog>
     </React.Fragment>
   );

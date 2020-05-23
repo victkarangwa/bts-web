@@ -203,6 +203,7 @@ const Index = ({ becomeMember }) => {
           <meta
             name='description'
             content='Join us in creating more compassionate, loving and caring society in our country and the whole of Africa'
+            data-react-helmet='true'
           />
         </Helmet>
         <div className='membership-form'>

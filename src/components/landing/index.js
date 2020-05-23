@@ -11,6 +11,7 @@ import volunteerIcon from '../../assets/images/volunteerIcon.png';
 import handshakeIcon from '../../assets/images/handshakeIcon.png';
 import DonateDialog from '../common/donateDialog';
 import { donateModal } from '../../redux/actions/modalActions';
+import { Helmet } from 'react-helmet';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -42,6 +43,13 @@ const Index = ({ donateModal, modal }) => {
     <div>
       <div className='page-container'>
         <Header />
+        <Helmet>
+          <title>Become a Member - BTS</title>
+          <meta
+            name='description'
+            content='Join us in creating more compassionate, loving and caring society in our country and the whole of Africa'
+          />
+        </Helmet>
         {modal.donateModal && <DonateDialog />}
         <div className='page-body'>
           <div className='landing'>

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import PropTypes from 'prop-types';
+import {Helmet} from 'react-helmet';
 import {
   makeStyles,
   TextField,
@@ -197,6 +198,13 @@ const Index = ({ becomeMember }) => {
     <div>
       <div className='page-container'>
         <Header />
+        <Helmet>
+          <title>Become a Member - BTS</title>
+          <meta
+            name='description'
+            content='Join us in creating more compassionate, loving and caring society in our country and the whole of Africa'
+          />
+        </Helmet>
         <div className='membership-form'>
           <div className={classes.root}>
             <AppBar position='static' color='default'>

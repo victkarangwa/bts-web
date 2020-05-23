@@ -1,3 +1,5 @@
+@import '../../../node_modules/react-toastify/scss/main.scss';
+
 $dark-color: #343434;
 $blue-color: #4182ff;
 $orange-color: #e68b4c;
@@ -163,9 +165,9 @@ $gray-color: #a0a0a0;
     flex-wrap: wrap;
     margin: 0 auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-          @media screen and (max-width: 600px) {
-margin-bottom: 20px;
-      }
+    @media screen and (max-width: 600px) {
+      margin-bottom: 20px;
+    }
     .testimony {
       width: 45%;
       height: 190px;
@@ -200,14 +202,13 @@ margin-bottom: 20px;
           width: 100%;
         }
       }
-      
     }
-                    .testimony::after {
-  content: "";
-  background-color: rgb(218, 218, 218);
-  width: 100%;
-  height: 1px;
-        }
+    .testimony::after {
+      content: '';
+      background-color: rgb(218, 218, 218);
+      width: 100%;
+      height: 1px;
+    }
   }
   .sub-header {
     color: $orange-color;
@@ -264,8 +265,8 @@ margin-bottom: 20px;
       font-size: 28px;
       margin-left: 10px;
       padding-top: 5px;
-                @media screen and (max-width: 600px) {
-display: block;
+      @media screen and (max-width: 600px) {
+        display: block;
       }
     }
     .nav-menu {
@@ -332,5 +333,24 @@ display: block;
         }
       }
     }
+  }
+}
+.modal-styled-body {
+  height: 50px;
+  width: 100%;
+  background-color: $dark-color;
+  display: flex;
+  justify-content: space-evenly;
+
+  a {
+    text-decoration: none;
+    margin-top: 15px;
+    color: $orange-color;
+  }
+}
+.important-txt {
+  color: $orange-color !important;
+  a {
+    color: $orange-color !important;
   }
 }

@@ -3,6 +3,7 @@
 export const useStyles = theme => ({
     TextField:{
         width:'500px',
+        backgroundColor: '#fff',
         "@media (max-width:780px)": {
             width:"300px"
           }

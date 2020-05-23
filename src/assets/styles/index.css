@@ -81,8 +81,8 @@ code {
     font-size: 20px;
     margin-top: 10%;
   }
-  .contact-section {
-    margin-left: 25%;
+  .contact-section{
+    margin-left: 27px;
   }
   .contact-section-title p {
     font-size: 22px;
@@ -93,8 +93,9 @@ code {
   .contact-info {
     font-size: 14px;
   }
-  .form-section div p {
-    font-size: 22px;
+  .form-section div p{
+    font-size: 20px;
+    width: 95%;
   }
   .form-section {
     margin-left: 8%;

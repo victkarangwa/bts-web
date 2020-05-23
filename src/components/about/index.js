@@ -10,6 +10,7 @@ import Footer from "../common/Footer"
 import DonateDialog from '../common/donateDialog';
 import { connect } from 'react-redux';
 import { donateModal } from '../../redux/actions/modalActions';
+import { Helmet } from 'react-helmet';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -30,6 +31,9 @@ const About = ({ donateModal, modal }) => {
   return (
     <div className='page-container'>
       <Header />
+      <Helmet>
+        <title>About us - BTS</title>
+      </Helmet>
       {modal.donateModal && <DonateDialog />}
       <div className='about-page'>
         <div className='about-header'>

@@ -13,6 +13,7 @@ import Header from '../common/Header';
 import Footer from '../common/Footer';
 import { connect } from 'react-redux';
 import {sendMessage} from '../../redux/actions/contactActions'
+import { Helmet } from 'react-helmet';
 
 
   const useStyles = makeStyles((theme) => ({
@@ -95,6 +96,9 @@ const Contact = ({ sendMessage }) => {
   return (
     <div className='page-container'>
       <Header />
+      <Helmet>
+        <title>Contact us - BTS</title>
+      </Helmet>
       <div className='contact-page-container'>
         <div className='header-image-container'>
           <h4>Contact us</h4>

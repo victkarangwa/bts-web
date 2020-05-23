@@ -3,7 +3,7 @@ import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import Index from './components/landing';
 import './assets/styles/index.scss';
 import Contact from './components/contact/index';
-// import Index from './components';
+import { ToastContainer } from 'react-toastify';
 import About from './components/about/index';
 import Event from './components/events/index';
 import Membership from './components/membership'
@@ -19,6 +19,7 @@ function App() {
           <Route path='/about' component={About} />
           <Route path='/events' exact component={Event}/>
         </Switch>
+        <ToastContainer />
       </div>
     </Router>
   );

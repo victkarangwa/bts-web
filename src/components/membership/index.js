@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import PropTypes from 'prop-types';
@@ -25,6 +26,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
+import { becomeMember } from '../../redux/actions/memberAction';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -91,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
   checkBox: {
     margin: '30px 0 !important',
     '&$checked': {
-    color: '#343434 !important',
+      color: '#343434 !important',
     },
     width: '500px',
     [theme.breakpoints.down('sm')]: {
@@ -113,7 +115,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const Index = () => {
+const Index = ({ becomeMember }) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const [checked, setChecked] = React.useState(true);
@@ -130,56 +132,56 @@ const Index = () => {
     reason: '',
     gotFrom: '',
   });
-    const handleInput = (e) => {
-      const { name, value } = e.target;
-      console.log('======.', value);
-      
-      switch (name) {
-        case 'firstName':
-          setuserRequest({ ...userRequest, firstName: value });
-          break;
-        case 'lastName':
-          setuserRequest({ ...userRequest, lastName: value });
-          break;
-        case 'email':
-          setuserRequest({ ...userRequest, email: value });
-          break;
-        case 'phone':
-          setuserRequest({ ...userRequest, phone: value });
-          break;
-        case 'address':
-          setuserRequest({ ...userRequest, address: value });
-          break;
-        case 'country':
-          setuserRequest({ ...userRequest, country: value });
-          break;
-        case 'occupation':
-          setuserRequest({ ...userRequest, occupation: value });
-          break;
-        case 'nid':
-          setuserRequest({ ...userRequest, nid: value });
-          break;
-        case 'dob':
-          setuserRequest({ ...userRequest, dob: value });
-          break;
-        case 'reason':
-          setuserRequest({ ...userRequest, reason: value });
-          break;
-        case 'gotFrom':
-          setuserRequest({ ...userRequest, gotFrom: value });
-          break;
+  const handleInput = (e) => {
+    const { name, value } = e.target;
 
-        default:
-          break;
-      }
-    };
+    switch (name) {
+      case 'firstName':
+        setuserRequest({ ...userRequest, firstName: value });
+        break;
+      case 'lastName':
+        setuserRequest({ ...userRequest, lastName: value });
+        break;
+      case 'email':
+        setuserRequest({ ...userRequest, email: value });
+        break;
+      case 'phone':
+        setuserRequest({ ...userRequest, phone: value });
+        break;
+      case 'address':
+        setuserRequest({ ...userRequest, address: value });
+        break;
+      case 'country':
+        setuserRequest({ ...userRequest, country: value });
+        break;
+      case 'occupation':
+        setuserRequest({ ...userRequest, occupation: value });
+        break;
+      case 'nid':
+        setuserRequest({ ...userRequest, nid: value });
+        break;
+      case 'dob':
+        setuserRequest({ ...userRequest, dob: value });
+        break;
+      case 'reason':
+        setuserRequest({ ...userRequest, reason: value });
+        break;
+      case 'gotFrom':
+        setuserRequest({ ...userRequest, gotFrom: value });
+        break;
+
+      default:
+        break;
+    }
+  };
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const handleSubmit = () =>{
-      console.log(userRequest);
-      
-  }
+  const handleSubmit = () => {
+    console.log(userRequest);
+    
+    becomeMember(userRequest);
+  };
 
   return (
     <div>
@@ -214,6 +216,7 @@ const Index = () => {
                 className={classes.TextField}
                 onChange={handleInput}
                 name='firstName'
+                value={userRequest.firstName || ''}
               />
               <Box m={1} />
               <TextField
@@ -223,6 +226,7 @@ const Index = () => {
                 className={classes.TextField}
                 onChange={handleInput}
                 name='lastName'
+                value={userRequest.lastName || ''}
               />
               <Box m={1} />
               <TextField
@@ -232,6 +236,7 @@ const Index = () => {
                 className={classes.TextField}
                 onChange={handleInput}
                 name='email'
+                value={userRequest.email || ''}
               />
               <Box m={1} />
               <TextField
@@ -241,6 +246,7 @@ const Index = () => {
                 className={classes.TextField}
                 onChange={handleInput}
                 name='phone'
+                value={userRequest.phone || ''}
               />
               <Button
                 variant='contained'
@@ -260,10 +266,10 @@ const Index = () => {
                 label='Date of birth'
                 variant='outlined'
                 type='date'
-                defaultValue='2000-01-01'
                 className={classes.TextField}
                 onChange={handleInput}
                 name='dob'
+                defaultValue='2000-01-01'
               />
               <Box m={1} />
               <TextField
@@ -273,6 +279,7 @@ const Index = () => {
                 className={classes.TextField}
                 onChange={handleInput}
                 name='nid'
+                value={userRequest.nid || ''}
               />
               <Box m={1} />
               <TextField
@@ -282,6 +289,7 @@ const Index = () => {
                 className={classes.TextField}
                 onChange={handleInput}
                 name='address'
+                value={userRequest.address || ''}
               />
               <Box m={1} />
               <TextField
@@ -291,6 +299,7 @@ const Index = () => {
                 className={classes.TextField}
                 onChange={handleInput}
                 name='country'
+                value={userRequest.country || ''}
               />
               <Button
                 variant='contained'
@@ -312,6 +321,7 @@ const Index = () => {
                 className={classes.TextField}
                 onChange={handleInput}
                 name='occupation'
+                value={userRequest.occupation || ''}
               />
               <Box m={1} />
               <TextField
@@ -322,6 +332,7 @@ const Index = () => {
                 className={classes.TextField}
                 onChange={handleInput}
                 name='reason'
+                value={userRequest.reason || ''}
               />
               <Box m={1} />
               <FormControl variant='outlined' className={classes.formControl}>
@@ -334,19 +345,19 @@ const Index = () => {
                   onChange={handleInput}
                   label='How did you hear about us'
                   name='gotFrom'
+                  value={userRequest.gotFrom || ''}
                 >
                   <MenuItem value=''>
                     <em>Other</em>
                   </MenuItem>
-                  <MenuItem value={10}>Facebook</MenuItem>
-                  <MenuItem value={20}>Twitter</MenuItem>
-                  <MenuItem value={30}>Youtube</MenuItem>
-                  <MenuItem value={30}>Instagram</MenuItem>
-                  <MenuItem value={30}>Linkedin</MenuItem>
-                  <MenuItem value={30}>Radio</MenuItem>
-                  <MenuItem value={30}>TV</MenuItem>
-                  <MenuItem value={30}>Search Engine</MenuItem>
-                  <MenuItem value={30}>Friends</MenuItem>
+                  <MenuItem value='Facebook'>Facebook</MenuItem>
+                  <MenuItem value='Twitter'>Twitter</MenuItem>
+                  <MenuItem value='Youtube'>Youtube</MenuItem>
+                  <MenuItem value='Linkedin'>Linkedin</MenuItem>
+                  <MenuItem value='Radio'>Radio</MenuItem>
+                  <MenuItem value='TV'>TV</MenuItem>
+                  <MenuItem value='Search Engine'>Search Engine</MenuItem>
+                  <MenuItem value='Friends'>Friends</MenuItem>
                 </Select>
                 <FormControlLabel
                   value='end'
@@ -374,4 +385,10 @@ const Index = () => {
     </div>
   );
 };
-export default Index;
+const mapStateToProps = (state) =>{
+
+  return{
+    membership: state.membership
+  }
+}
+export default connect(mapStateToProps, {becomeMember})(Index);

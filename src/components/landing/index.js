@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import { Button, makeStyles } from '@material-ui/core';
@@ -8,6 +9,8 @@ import heartIcon from '../../assets/images/heartIcon.png';
 import peopleIcon from '../../assets/images/peopleIcon.png';
 import volunteerIcon from '../../assets/images/volunteerIcon.png';
 import handshakeIcon from '../../assets/images/handshakeIcon.png';
+import DonateDialog from '../common/donateDialog';
+import { donateModal } from '../../redux/actions/modalActions';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -29,12 +32,17 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const Index = () => {
+const Index = ({ donateModal, modal }) => {
   const classes = useStyles();
+
+  const openDonateModal = () => {
+    donateModal(true);
+  };
   return (
     <div>
       <div className='page-container'>
         <Header />
+        {modal.donateModal && <DonateDialog />}
         <div className='page-body'>
           <div className='landing'>
             <div className='overlay'>
@@ -153,6 +161,7 @@ const Index = () => {
                             color='secondary'
                             className={classes.appBtn}
                             size='large'
+                            onClick={openDonateModal}
                           >
                             Donate
                           </Button>
@@ -203,6 +212,7 @@ const Index = () => {
                             color='secondary'
                             className={classes.appBtn}
                             size='large'
+                            onClick={openDonateModal}
                           >
                             Donate
                           </Button>
@@ -252,6 +262,7 @@ const Index = () => {
                             color='secondary'
                             className={classes.appBtn}
                             size='large'
+                            onClick={openDonateModal}
                           >
                             Donate
                           </Button>
@@ -271,7 +282,9 @@ const Index = () => {
               </div>
               {/* "member testimonies" section */}
               <div className='main-header'>
-                <label className="upper-txt">See what our members are saying</label>
+                <label className='upper-txt'>
+                  See what our members are saying
+                </label>
               </div>
               <div className='wrapper'>
                 <div className='full-card'>
@@ -381,4 +394,10 @@ const Index = () => {
     </div>
   );
 };
-export default Index;
+const mapStateToProps = (state) => {
+
+  return {
+    modal: state.Modals,
+  };
+};
+export default connect(mapStateToProps, { donateModal })(Index);

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux';
 import {
   TextField,
   Dialog,
@@ -14,6 +15,8 @@ import SendIcon from '@material-ui/icons/Send';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import '../../assets/styles/style.scss';
 import Alert from '@material-ui/lab/Alert';
+import { donateModal } from '../../redux/actions/modalActions';
+import { sendDonation } from '../../redux/actions/donateAction';
 
 const useStyles = makeStyles((theme) => ({
   closeButton: {
@@ -63,19 +66,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Donate = () => {
+const Donate = ({ donateModal, sendDonation }) => {
   const classes = useStyles();
   const [fullWidth, setFullWidth] = React.useState(true);
   const [maxWidth, setMaxWidth] = React.useState('sm');
 
   const handleModal = () => {
-    // openHireModal(false);
+    donateModal(false);
   };
 
   const [OpenBackdrop, setOpenBackdrop] = React.useState(false);
   const [openAlert, setopenAlert] = useState(false);
   const [userRequest, setuUserRequest] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
     pledge: '',
@@ -85,8 +89,11 @@ const Donate = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     switch (name) {
-      case 'names':
-        setuUserRequest({ ...userRequest, company: value });
+      case 'firstName':
+        setuUserRequest({ ...userRequest, firstName: value });
+        break;
+      case 'lastName':
+        setuUserRequest({ ...userRequest, lastName: value });
         break;
       case 'email':
         setuUserRequest({ ...userRequest, email: value });
@@ -112,9 +119,8 @@ const Donate = () => {
 
   const handleSend = async () => {
     setOpenBackdrop(true);
-    setTimeout(() => {
-      handleClose();
-    }, 3000);
+    await sendDonation(userRequest);
+    handleClose();
   };
 
   return (
@@ -137,9 +143,17 @@ const Donate = () => {
             <TextField
               id='standard-basic'
               variant='outlined'
-              label='Names'
+              label='First name'
               className={classes.multilineField}
-              name='names'
+              name='firstName'
+              onChange={handleChange}
+            />
+            <TextField
+              id='standard-basic'
+              variant='outlined'
+              label='Last name'
+              className={classes.multilineField}
+              name='lastName'
               onChange={handleChange}
             />
             <TextField
@@ -228,8 +242,8 @@ const Donate = () => {
 };
 const mapStateToProps = (state) => {
   return {
-    // openModal: state.Modals.openHireModal,
-    offers: state.messages,
+    modal: state.Modals,
   };
 };
-export default Donate;
+
+export default connect(mapStateToProps, { donateModal, sendDonation })(Donate);

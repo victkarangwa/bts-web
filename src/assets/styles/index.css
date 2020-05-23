@@ -119,10 +119,12 @@ code {
 .event-page-header {
   height: 150px;
   width: 100%;
-  background-color: #959595;
   text-align: center;
   color: white;
   font-size: 30px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62)),
+    url("../images/children-photo.png");
+  background-size: cover;
 }
 .events-wrapper {
   display: flex;
@@ -400,7 +402,7 @@ code {
 }
 .card-container {
   display: flex;
-  margin-left: 2%;
+  justify-content: space-evenly;
 }
 .card {
   width: 460px;
@@ -414,6 +416,7 @@ code {
   background: #fafafa;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
+  padding: 5px;
 }
 .card2 {
   width: 460px;
@@ -421,6 +424,7 @@ code {
   background: #fafafa;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
+    padding: 5px;
 }
 .card3 {
   width: 460px;
@@ -428,6 +432,7 @@ code {
   background: #fafafa;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
+    padding: 5px;
 }
 .card1 h6 {
   font-size: 23px;
@@ -517,7 +522,7 @@ code {
   .card-container {
     display: flex;
     flex-direction: column;
-    margin-left: 2%;
+    justify-content: space-evenly;
   }
   .card1 {
     width: 100%;

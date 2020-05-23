@@ -334,3 +334,16 @@ display: block;
     }
   }
 }
+.modal-styled-body {
+  height: 50px;
+  width: 100%;
+  background-color: $dark-color;
+  display: flex;
+  justify-content: space-evenly;
+
+  a {
+    text-decoration: none;
+    margin-top: 15px;
+    color: $orange-color;
+  }
+}

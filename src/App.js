@@ -6,14 +6,16 @@ import Contact from './components/contact/index';
 // import Index from './components';
 import About from './components/about/index';
 import Event from './components/events/index';
+import Membership from './components/membership'
 
 function App() {
   return (
     <Router>
       <div>
         <Switch>
-        <Route path='/' exact component={Index} />
+          <Route path='/' exact component={Index} />
           <Route path='/contact' exact component={Contact} />
+          <Route path='/membership/apply' exact component={Membership} />
           <Route path='/about' component={About} />
           <Route path='/events' exact component={Event}/>
         </Switch>

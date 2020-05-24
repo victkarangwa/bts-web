@@ -21,3 +21,19 @@ export const becomeMember = (payload) => async (dispatch) => {
     notificationError(err);
   }
 };
+
+export const becomeSponsor = (payload) => async (dispatch) => {
+  try {
+    const sponsorship = await apiCall.post('/sponsors/apply', payload);
+    dispatch({
+      type: BECOME_MEMBER,
+      payload: sponsorship.data,
+    });
+    dispatch(errorAction(''));
+    notificationSuccess(sponsorship.data.message);
+  } catch (error) {
+    const err = error.response.data.error[0];
+    dispatch(errorAction(err));
+    notificationError(err);
+  }
+};

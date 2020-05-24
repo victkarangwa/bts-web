@@ -7,6 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import About from './components/about/index';
 import Event from './components/events/index';
 import Membership from './components/membership'
+import Sponsorship from './components/sponsorship';
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
           <Route path='/' exact component={Index} />
           <Route path='/contact' exact component={Contact} />
           <Route path='/membership/apply' exact component={Membership} />
+          <Route path='/sponsorship/apply' exact component={Sponsorship} />
           <Route path='/about' component={About} />
-          <Route path='/events' exact component={Event}/>
+          <Route path='/events' exact component={Event} />
         </Switch>
         <ToastContainer />
       </div>

@@ -19,19 +19,22 @@ import { Helmet } from 'react-helmet';
   const useStyles = makeStyles((theme) => ({
     TextField: {
       width: '500px',
+      fontSize: '15px',
       backgroundColor: '#fff',
       '@media (max-width:780px)': {
         width: '300px',
       },
     },
     textarea: {
-      width: '478px',
+      width: '476px',
       fontSize: '15px',
       border: '1px solid #C4C4C4',
       padding: '12px',
       '@media (max-width:780px)': {
         width: '275px',
       },
+      borderRadius: '5px',
+      outline: 'none'
     },
     sendButton: {
       background: '#f86f2d',
@@ -105,50 +108,52 @@ const Contact = ({ sendMessage }) => {
         </div>
         <div className='main-page'>
           <div class='form-section'>
-            <div>
-              <p>Do you have a question or suggestion ?</p>
-            </div>
-            <div>
-              <form>
-                <TextField
-                  id='outlined-secondary'
-                  label='Your name'
-                  variant='outlined'
-                  className={classes.TextField}
-                  name='names'
-                  onChange={handleChange}
-                />
-                <Box m={1} />
-                <TextField
-                  id='outlined-secondary'
-                  label='Your email'
-                  variant='outlined'
-                  className={classes.TextField}
-                  name='email'
-                  onChange={handleChange}
-                />
-                <Box m={1} />
-                <TextField
-                  id='outlined-secondary'
-                  label='Subject'
-                  variant='outlined'
-                  className={classes.TextField}
-                  name='subject'
-                  onChange={handleChange}
-                />
-                <Box m={1} />
-                <TextareaAutosize
-                  rowsMin={13}
-                  placeholder='Message'
-                  className={classes.textarea}
-                  name='message'
-                  onChange={handleChange}
-                />
-                <Box m={1} />
-                <Button className={classes.sendButton} onClick={handleSend}>
-                  send message
-                </Button>
-              </form>
+            <div className='section-bolder'>
+              <div>
+                <p className="center-txt">Do you have a question or suggestion ?</p>
+              </div>
+              <div>
+                <form>
+                  <TextField
+                    id='outlined-secondary'
+                    label='Your name'
+                    variant='outlined'
+                    className={classes.TextField}
+                    name='names'
+                    onChange={handleChange}
+                  />
+                  <Box m={1} />
+                  <TextField
+                    id='outlined-secondary'
+                    label='Your email'
+                    variant='outlined'
+                    className={classes.TextField}
+                    name='email'
+                    onChange={handleChange}
+                  />
+                  <Box m={1} />
+                  <TextField
+                    id='outlined-secondary'
+                    label='Subject'
+                    variant='outlined'
+                    className={classes.TextField}
+                    name='subject'
+                    onChange={handleChange}
+                  />
+                  <Box m={1} />
+                  <TextareaAutosize
+                    rowsMin={13}
+                    placeholder='Message'
+                    className={classes.textarea}
+                    name='message'
+                    onChange={handleChange}
+                  />
+                  <Box m={1} />
+                  <Button className={classes.sendButton} onClick={handleSend}>
+                    send message
+                  </Button>
+                </form>
+              </div>
             </div>
           </div>
           <div className='contact-section'>

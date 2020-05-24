@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import PropTypes from 'prop-types';
-import {Helmet} from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import {
   makeStyles,
   TextField,
@@ -122,14 +122,12 @@ const useStyles = makeStyles((theme) => ({
     color: '#fff',
   },
   appBar: {
-    alignItems: 'center',
+      alignItems: 'center',
   },
 }));
 const Index = ({ becomeMember }) => {
   const classes = useStyles();
-    const [SubmitBtn, setSubmitBtn] = React.useState(1);
   const [value, setValue] = React.useState(0);
-  const [checked, setChecked] = React.useState(true);
   const [OpenBackdrop, setOpenBackdrop] = React.useState(false);
   const [userRequest, setuserRequest] = React.useState({
     firstName: '',
@@ -138,15 +136,11 @@ const Index = ({ becomeMember }) => {
     phone: '',
     address: '',
     country: '',
-    occupation: '',
-    nid: '',
-    dob: '',
-    reason: '',
-    gotFrom: '',
+    comment: '',
   });
-    const handleClose = () => {
-      setOpenBackdrop(false);
-    };
+  const handleClose = () => {
+    setOpenBackdrop(false);
+  };
   const handleInput = (e) => {
     const { name, value } = e.target;
 
@@ -169,20 +163,8 @@ const Index = ({ becomeMember }) => {
       case 'country':
         setuserRequest({ ...userRequest, country: value });
         break;
-      case 'occupation':
-        setuserRequest({ ...userRequest, occupation: value });
-        break;
-      case 'nid':
-        setuserRequest({ ...userRequest, nid: value });
-        break;
-      case 'dob':
-        setuserRequest({ ...userRequest, dob: value });
-        break;
-      case 'reason':
-        setuserRequest({ ...userRequest, reason: value });
-        break;
-      case 'gotFrom':
-        setuserRequest({ ...userRequest, gotFrom: value });
+      case 'comment':
+        setuserRequest({ ...userRequest, comment: value });
         break;
 
       default:
@@ -192,10 +174,6 @@ const Index = ({ becomeMember }) => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const handleCheck = (e) =>{
-    const { checked } = e.target;
-    checked ? setSubmitBtn(0) : setSubmitBtn(1)
-  }
   const handleSubmit = () => {
     setOpenBackdrop(true);
     becomeMember(userRequest);
@@ -207,15 +185,15 @@ const Index = ({ becomeMember }) => {
       <div className='page-container'>
         <Header />
         <Helmet>
-          <title>Become a Member - BTS</title>
+          <title>Become a Sponsor - BTS</title>
           <meta
             name='description'
             content='Join us in creating more compassionate, loving and caring society in our country and the whole of Africa'
             data-react-helmet='true'
           />
         </Helmet>
-        <div className='membership-form'>
-          <h3 className='center-txt upper-txt'>Become a member</h3>
+        <div className='sponsership-form'>
+          <h3 className='center-txt upper-txt'>Become a sponsor</h3>
           <div className={classes.root}>
             <AppBar className={classes.appBar} position='static' color='default'>
               <Tabs
@@ -232,8 +210,7 @@ const Index = ({ becomeMember }) => {
                   icon={<InfoRounded />}
                   {...a11yProps(0)}
                 />
-                <Tab label='Step two' icon={<PersonPin />} {...a11yProps(1)} />
-                <Tab label='Apply' icon={<SendIcon />} {...a11yProps(2)} />
+                <Tab label='Submit' icon={<SendIcon />} {...a11yProps(1)} />
               </Tabs>
             </AppBar>
             <TabPanel className='tabbed-info' value={value} index={0}>
@@ -289,26 +266,6 @@ const Index = ({ becomeMember }) => {
               </Button>
             </TabPanel>
             <TabPanel value={value} index={1}>
-              <TextField
-                id='outlined-secondary'
-                label='Date of birth'
-                variant='outlined'
-                type='date'
-                className={classes.TextField}
-                onChange={handleInput}
-                name='dob'
-                defaultValue='2000-01-01'
-              />
-              <Box m={1} />
-              <TextField
-                id='outlined-secondary'
-                label='National ID'
-                variant='outlined'
-                className={classes.TextField}
-                onChange={handleInput}
-                name='nid'
-                value={userRequest.nid || ''}
-              />
               <Box m={1} />
               <TextField
                 id='outlined-secondary'
@@ -329,80 +286,23 @@ const Index = ({ becomeMember }) => {
                 name='country'
                 value={userRequest.country || ''}
               />
-              <Button
-                variant='contained'
-                color='secondary'
-                className={classes.appBtn}
-                size='large'
-                onClick={(e) => {
-                  handleChange(e, 2);
-                }}
-              >
-                Next
-              </Button>
-            </TabPanel>
-            <TabPanel value={value} index={2}>
               <TextField
                 id='outlined-secondary'
-                label='Occupation'
+                label='Comment(optional)'
                 variant='outlined'
                 className={classes.TextField}
                 onChange={handleInput}
-                name='occupation'
-                value={userRequest.occupation || ''}
-              />
-              <Box m={1} />
-              <TextField
-                id='outlined-secondary'
-                label='Reason'
-                variant='outlined'
+                name='comment'
+                value={userRequest.comment || ''}
                 multiline
-                className={classes.TextField}
-                onChange={handleInput}
-                name='reason'
-                value={userRequest.reason || ''}
+                rows={4}
               />
-              <Box m={1} />
-              <FormControl variant='outlined' className={classes.formControl}>
-                <InputLabel id='demo-simple-select-outlined-label'>
-                  How did you hear about us
-                </InputLabel>
-                <Select
-                  labelId='demo-simple-select-outlined-label'
-                  id='demo-simple-select-outlined'
-                  onChange={handleInput}
-                  label='How did you hear about us'
-                  name='gotFrom'
-                  value={userRequest.gotFrom || ''}
-                >
-                  <MenuItem value='Other'>
-                    <em>Other</em>
-                  </MenuItem>
-                  <MenuItem value='Facebook'>Facebook</MenuItem>
-                  <MenuItem value='Twitter'>Twitter</MenuItem>
-                  <MenuItem value='Youtube'>Youtube</MenuItem>
-                  <MenuItem value='Linkedin'>Linkedin</MenuItem>
-                  <MenuItem value='Radio'>Radio</MenuItem>
-                  <MenuItem value='TV'>TV</MenuItem>
-                  <MenuItem value='Search Engine'>Search Engine</MenuItem>
-                  <MenuItem value='Friends'>Friends</MenuItem>
-                </Select>
-                <FormControlLabel
-                  value='end'
-                  control={<Checkbox color='primary' />}
-                  label='Check here to indicate that you have read and agree to the terms of BTS'
-                  labelPlacement='end'
-                  className={classes.checkBox}
-                  onChange={handleCheck}
-                />
-              </FormControl>
               <Button
                 variant='contained'
                 color='secondary'
                 className={classes.appBtn}
                 size='large'
                 onClick={handleSubmit}
-                disabled={SubmitBtn}
               >
                 Submit
               </Button>

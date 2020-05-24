@@ -18,7 +18,9 @@ setnavDrawer(!navDrawer);
             &#9776;
           </span>
         </div>
-        <div className='nav-logo'>BTS</div>
+        <div className='nav-logo'>
+          <Link to='/'>BTS</Link>
+        </div>
         <div className='nav-menu'>
           <ul>
             <li>
@@ -35,6 +37,9 @@ setnavDrawer(!navDrawer);
             </li>
             <li className='important-txt'>
               <Link to='/membership/apply'>Be one of us</Link>
+            </li>
+            <li className='important-txt'>
+              <Link to='/sponsorship/apply'>Become a sponsor</Link>
             </li>
           </ul>
         </div>

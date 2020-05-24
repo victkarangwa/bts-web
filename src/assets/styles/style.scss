@@ -51,6 +51,7 @@ $gray-color: #a0a0a0;
     }
     .project-img {
       width: 100%;
+      height: 230px;
     }
   }
   .wrapper {
@@ -75,16 +76,16 @@ $gray-color: #a0a0a0;
       height: 100%;
     }
   }
-  .txt-lg{
+  .txt-lg {
     color: $orange-color;
     font-size: 40px;
     font-weight: bolder;
     margin: 0 !important;
-    padding-top:20px;
+    padding-top: 20px;
   }
-  .headings{
-margin: 40px 0 0 0  !important;
-font-weight: bolder !important;
+  .headings {
+    margin: 40px 0 0 0 !important;
+    font-weight: bolder !important;
   }
   .sm-icon {
     width: 20px;
@@ -115,13 +116,19 @@ font-weight: bolder !important;
   .upper-txt {
     text-transform: uppercase;
   }
+  .section-bolder{
+    border: 1px solid rgba(0, 0, 0, 0.26);
+    padding: 10px;
+    margin: 15px auto;
+    border-radius: 5px;
+  }
   .details-sections {
     padding: 10px;
     text-align: center;
   }
   .rectangular-card {
     width: 300px;
-    height: 450px;
+    height: 500px;
     background-color: $white-color;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -214,11 +221,13 @@ font-weight: bolder !important;
         }
       }
     }
-    .testimony::after {
-      content: '';
-      background-color: rgb(218, 218, 218);
-      width: 100%;
-      height: 1px;
+    @media screen and (max-width: 600px) {
+      .testimony::after {
+        content: '';
+        background-color: rgb(218, 218, 218);
+        width: 100%;
+        height: 1px;
+      }
     }
   }
   .sub-header {
@@ -231,6 +240,13 @@ font-weight: bolder !important;
       color: $orange-color;
       font-weight: bolder;
       text-align: center;
+      a {
+        color: $orange-color;
+        font-weight: bolder;
+        text-align: center;
+        text-decoration: none;
+        
+      }
     }
     .nav-menu {
       ul {
@@ -262,6 +278,11 @@ font-weight: bolder !important;
       padding-top: 15px;
       color: $orange-color;
       font-weight: bolder;
+            a {
+        color: $orange-color;
+        font-weight: bolder;
+         text-decoration: none;
+      }
       @media screen and (max-width: 600px) {
         padding-top: 1px;
         margin: auto;

@@ -12,12 +12,14 @@ import arsenePic from '../../assets/images/arsene.jpeg';
 import bonfilsPic from '../../assets/images/bonfils.jpeg';
 import buildHousePic from '../../assets/images/4.jpg';
 import heartIcon from '../../assets/images/heartIcon.png';
-import peopleIcon from '../../assets/images/peopleIcon.png';
+import LoveIcon from '../../assets/images/loveIcon.png';
 import volunteerIcon from '../../assets/images/volunteerIcon.png';
 import handshakeIcon from '../../assets/images/handshakeIcon.png';
 import DonateDialog from '../common/donateDialog';
 import { donateModal } from '../../redux/actions/modalActions';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
+import Pagination from '@material-ui/lab/Pagination';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -75,7 +77,7 @@ const Index = ({ donateModal, modal }) => {
                   className={classes.button}
                   size='large'
                 >
-                  Read More
+                  <Link to='/about'>read more</Link>
                 </Button>
               </div>
               {/* "About" section */}
@@ -105,7 +107,7 @@ const Index = ({ donateModal, modal }) => {
                     <div className='icon-section'>
                       <img
                         className='lg-icon'
-                        src={peopleIcon}
+                        src={LoveIcon}
                         alt='volunteer_icon'
                       />
                     </div>
@@ -315,6 +317,7 @@ const Index = ({ donateModal, modal }) => {
               </div>
               <div className='wrapper'>
                 <div className='full-card'>
+                  <Pagination count={3} variant='outlined' color='primary' />
                   <div className='testimony'>
                     <div className='testimony-img'>
                       <img

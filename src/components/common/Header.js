@@ -63,6 +63,9 @@ setnavDrawer(!navDrawer);
               <li className='important-txt'>
                 <Link to='/membership/apply'>Be one of us</Link>
               </li>
+              <li className='important-txt'>
+                <Link to='/sponsorship/apply'>Become a sponsor</Link>
+              </li>
             </ul>
           </div>
         </div>

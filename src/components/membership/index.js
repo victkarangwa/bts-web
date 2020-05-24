@@ -19,7 +19,6 @@ import Tab from '@material-ui/core/Tab';
 import InfoRounded from '@material-ui/icons/InfoRounded';
 import PersonPin from '@material-ui/icons/PersonPin';
 import SendIcon from '@material-ui/icons/SendRounded';
-import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 import ThumbDown from '@material-ui/icons/ThumbDown';
 import ThumbUp from '@material-ui/icons/ThumbUp';
 import Typography from '@material-ui/core/Typography';

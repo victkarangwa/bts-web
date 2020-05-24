@@ -29,7 +29,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
-import { becomeMember } from '../../redux/actions/memberAction';
+import { becomeSponsor } from '../../redux/actions/memberAction';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -125,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
       alignItems: 'center',
   },
 }));
-const Index = ({ becomeMember }) => {
+const Index = ({ becomeSponsor }) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const [OpenBackdrop, setOpenBackdrop] = React.useState(false);
@@ -176,7 +176,7 @@ const Index = ({ becomeMember }) => {
   };
   const handleSubmit = () => {
     setOpenBackdrop(true);
-    becomeMember(userRequest);
+    becomeSponsor(userRequest);
     handleClose();
   };
 
@@ -195,7 +195,11 @@ const Index = ({ becomeMember }) => {
         <div className='sponsership-form'>
           <h3 className='center-txt upper-txt'>Become a sponsor</h3>
           <div className={classes.root}>
-            <AppBar className={classes.appBar} position='static' color='default'>
+            <AppBar
+              className={classes.appBar}
+              position='static'
+              color='default'
+            >
               <Tabs
                 value={value}
                 onChange={handleChange}
@@ -319,7 +323,7 @@ const Index = ({ becomeMember }) => {
 };
 const mapStateToProps = (state) => {
   return {
-    membership: state.membership,
+    sponsorship: state.membership,
   };
 };
-export default connect(mapStateToProps, { becomeMember })(Index);
+export default connect(mapStateToProps, { becomeSponsor })(Index);

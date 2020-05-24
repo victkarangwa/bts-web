@@ -21,6 +21,10 @@ $gray-color: #a0a0a0;
         left: 0;
         background-color: rgba(0, 0, 0, 0.664);
       }
+      a{
+        text-decoration: none;
+        color: inherit;
+      }
     }
     .landing-txt {
       padding-top: 200px;

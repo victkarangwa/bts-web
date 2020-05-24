@@ -19,7 +19,7 @@ import DonateDialog from '../common/donateDialog';
 import { donateModal } from '../../redux/actions/modalActions';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import Pagination from '@material-ui/lab/Pagination';
+
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -317,7 +317,6 @@ const Index = ({ donateModal, modal }) => {
               </div>
               <div className='wrapper'>
                 <div className='full-card'>
-                  <Pagination count={3} variant='outlined' color='primary' />
                   <div className='testimony'>
                     <div className='testimony-img'>
                       <img

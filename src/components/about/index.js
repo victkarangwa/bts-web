@@ -76,11 +76,9 @@ const About = ({ donateModal, modal }) => {
             </div>
             <div className='story-section-txt'>
               <p>
-                Neither the markets nor aid alone can solve the problems of
-                poverty. More than two billion people around the world lack
-                access to basic goods and services—from clean water and
-                electricity to an education and the freedom to participate in
-                the economy. We’re here to change that. Our vision is a world
+              We have seen people not able to meet their basic needs, street kids, school dropouts due to poverty. 
+              Famine, clothing, and shelter troubles them. Our experience while at Nyagatare secondary school made us decide to put our efforts together
+               and change lives of these people. This Idea started with Deo Niyonkuru, Maurice Haragirimana and John Mugiraneza in 2017.
               </p>
             </div>
           </div>

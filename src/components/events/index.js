@@ -14,7 +14,7 @@ class Event extends Component {
           date: "30th May 2020",
           location: "Kigali ",
           description:
-            "We a BTS general actibity of building a house and toilet of a man located at Kanombe. "
+            "We have BTS general activity of building house and toilet for a man located at Kanombe. "
         }
       ]
     };

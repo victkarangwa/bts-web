@@ -66,7 +66,7 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '600px',
-    height: '600px',
+    height: '640px',
     backgroundColor: theme.palette.background.paper,
     margin: '0 auto',
     marginTop: '40px',
@@ -101,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
     width: '500px',
     [theme.breakpoints.down('sm')]: {
       width: '100%',
-      margin: '15px 0',
+      margin: '15px 0px 15px 15px',
     },
   },
   appBtn: {
@@ -122,13 +122,14 @@ const useStyles = makeStyles((theme) => ({
     color: '#fff',
   },
   appBar: {
-      alignItems: 'center',
+    alignItems: 'center',
   },
 }));
 const Index = ({ becomeSponsor }) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const [OpenBackdrop, setOpenBackdrop] = React.useState(false);
+      const [SubmitBtn, setSubmitBtn] = React.useState(1);
   const [userRequest, setuserRequest] = React.useState({
     firstName: '',
     lastName: '',
@@ -174,11 +175,15 @@ const Index = ({ becomeSponsor }) => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const handleSubmit = () => {
+  const handleSubmit = async() => {
     setOpenBackdrop(true);
-    becomeSponsor(userRequest);
+    await becomeSponsor(userRequest);
     handleClose();
   };
+    const handleCheck = (e) => {
+      const { checked } = e.target;
+      checked ? setSubmitBtn(0) : setSubmitBtn(1);
+    };
 
   return (
     <div>
@@ -194,6 +199,15 @@ const Index = ({ becomeSponsor }) => {
         </Helmet>
         <div className='sponsership-form'>
           <h3 className='center-txt upper-txt'>Become a sponsor</h3>
+          <div className='center-txt'>
+            <a
+              href='https://res.cloudinary.com/victorkarangwa4/image/upload/v1591208503/BTS/BTS_sponsorship.pdf'
+              target='_blank'
+              className='link'
+            >
+              View sponsorship terms and condition
+            </a>
+          </div>
           <div className={classes.root}>
             <AppBar
               className={classes.appBar}
@@ -301,12 +315,21 @@ const Index = ({ becomeSponsor }) => {
                 multiline
                 rows={4}
               />
+              <FormControlLabel
+                value='end'
+                control={<Checkbox color='primary' />}
+                label='Check here to indicate that you have read and agree to the terms of BTS'
+                labelPlacement='end'
+                className={classes.checkBox}
+                onChange={handleCheck}
+              />
               <Button
                 variant='contained'
                 color='secondary'
                 className={classes.appBtn}
                 size='large'
                 onClick={handleSubmit}
+                disabled={SubmitBtn}
               >
                 Submit
               </Button>

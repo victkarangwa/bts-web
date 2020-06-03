@@ -195,9 +195,9 @@ const Index = ({ becomeMember }) => {
     const { checked } = e.target;
     checked ? setSubmitBtn(0) : setSubmitBtn(1)
   }
-  const handleSubmit = () => {
+  const handleSubmit = async() => {
     setOpenBackdrop(true);
-    becomeMember(userRequest);
+    await becomeMember(userRequest);
     handleClose();
   };
 
@@ -215,8 +215,21 @@ const Index = ({ becomeMember }) => {
         </Helmet>
         <div className='membership-form'>
           <h3 className='center-txt upper-txt'>Become a member</h3>
+          <div className='center-txt'>
+            <a
+              href='https://res.cloudinary.com/victorkarangwa4/image/upload/v1591208502/BTS/BTS_membership.pdf'
+              target='_blank'
+              className='link'
+            >
+              View membership terms and condition
+            </a>
+          </div>
           <div className={classes.root}>
-            <AppBar className={classes.appBar} position='static' color='default'>
+            <AppBar
+              className={classes.appBar}
+              position='static'
+              color='default'
+            >
               <Tabs
                 value={value}
                 onChange={handleChange}

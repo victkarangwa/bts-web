@@ -309,7 +309,7 @@ const Index = ({ becomeMember }) => {
                 className={classes.TextField}
                 onChange={handleInput}
                 name='dob'
-                defaultValue='2000-01-01'
+                defaultValue={userRequest.dob || '2000-01-01'}
               />
               <Box m={1} />
               <TextField

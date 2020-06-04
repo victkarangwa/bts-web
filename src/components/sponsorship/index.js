@@ -240,6 +240,7 @@ const Index = ({ becomeSponsor }) => {
                 onChange={handleInput}
                 name='firstName'
                 value={userRequest.firstName || ''}
+                autoComplete='off'
               />
               <Box m={1} />
               <TextField
@@ -250,6 +251,7 @@ const Index = ({ becomeSponsor }) => {
                 onChange={handleInput}
                 name='lastName'
                 value={userRequest.lastName || ''}
+                autoComplete='off'
               />
               <Box m={1} />
               <TextField
@@ -260,6 +262,7 @@ const Index = ({ becomeSponsor }) => {
                 onChange={handleInput}
                 name='email'
                 value={userRequest.email || ''}
+                autoComplete='off'
               />
               <Box m={1} />
               <TextField
@@ -270,6 +273,7 @@ const Index = ({ becomeSponsor }) => {
                 onChange={handleInput}
                 name='phone'
                 value={userRequest.phone || ''}
+                autoComplete='off'
               />
               <Button
                 variant='contained'
@@ -293,6 +297,7 @@ const Index = ({ becomeSponsor }) => {
                 onChange={handleInput}
                 name='address'
                 value={userRequest.address || ''}
+                autoComplete='off'
               />
               <Box m={1} />
               <TextField
@@ -303,6 +308,7 @@ const Index = ({ becomeSponsor }) => {
                 onChange={handleInput}
                 name='country'
                 value={userRequest.country || ''}
+                autoComplete='off'
               />
               <TextField
                 id='outlined-secondary'
@@ -314,6 +320,7 @@ const Index = ({ becomeSponsor }) => {
                 value={userRequest.comment || ''}
                 multiline
                 rows={4}
+                autoComplete='off'
               />
               <FormControlLabel
                 value='end'

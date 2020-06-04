@@ -257,6 +257,7 @@ const Index = ({ becomeMember }) => {
                 onChange={handleInput}
                 name='firstName'
                 value={userRequest.firstName || ''}
+                autoComplete='off'
               />
               <Box m={1} />
               <TextField
@@ -267,6 +268,7 @@ const Index = ({ becomeMember }) => {
                 onChange={handleInput}
                 name='lastName'
                 value={userRequest.lastName || ''}
+                autoComplete='off'
               />
               <Box m={1} />
               <TextField
@@ -277,6 +279,7 @@ const Index = ({ becomeMember }) => {
                 onChange={handleInput}
                 name='email'
                 value={userRequest.email || ''}
+                autoComplete='off'
               />
               <Box m={1} />
               <TextField
@@ -287,6 +290,7 @@ const Index = ({ becomeMember }) => {
                 onChange={handleInput}
                 name='phone'
                 value={userRequest.phone || ''}
+                autoComplete='off'
               />
               <Button
                 variant='contained'
@@ -320,6 +324,7 @@ const Index = ({ becomeMember }) => {
                 onChange={handleInput}
                 name='nid'
                 value={userRequest.nid || ''}
+                autoComplete='off'
               />
               <Box m={1} />
               <TextField
@@ -330,6 +335,7 @@ const Index = ({ becomeMember }) => {
                 onChange={handleInput}
                 name='address'
                 value={userRequest.address || ''}
+                autoComplete='off'
               />
               <Box m={1} />
               <TextField
@@ -340,6 +346,7 @@ const Index = ({ becomeMember }) => {
                 onChange={handleInput}
                 name='country'
                 value={userRequest.country || ''}
+                autoComplete='off'
               />
               <Button
                 variant='contained'
@@ -362,6 +369,7 @@ const Index = ({ becomeMember }) => {
                 onChange={handleInput}
                 name='occupation'
                 value={userRequest.occupation || ''}
+                autoComplete='off'
               />
               <Box m={1} />
               <TextField
@@ -373,6 +381,7 @@ const Index = ({ becomeMember }) => {
                 onChange={handleInput}
                 name='reason'
                 value={userRequest.reason || ''}
+                autoComplete='off'
               />
               <Box m={1} />
               <FormControl variant='outlined' className={classes.formControl}>

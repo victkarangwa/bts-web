@@ -92,8 +92,8 @@ return (
           <label className='sub-header'>Head Office</label>
           <p>KK 204 st KIgali Rwanda</p>
           <label className='sub-header'>Phone</label>
-          <p>+250 789 152 190</p>
-          <p>+250 789 095 871</p>
+          <p>+250 784 695 664</p>
+          <p>+250 785 571 790</p>
           <label className='sub-header'>Email</label>
           <p>info@btsrwanda.org</p>
         </div>

@@ -110,7 +110,9 @@ const Contact = ({ sendMessage }) => {
           <div class='form-section'>
             <div className='section-bolder'>
               <div>
-                <p className="center-txt">Do you have a question or suggestion ?</p>
+                <p className='center-txt'>
+                  Do you have a question or suggestion ?
+                </p>
               </div>
               <div>
                 <form>
@@ -121,6 +123,7 @@ const Contact = ({ sendMessage }) => {
                     className={classes.TextField}
                     name='names'
                     onChange={handleChange}
+                    autoComplete='off'
                   />
                   <Box m={1} />
                   <TextField
@@ -130,6 +133,7 @@ const Contact = ({ sendMessage }) => {
                     className={classes.TextField}
                     name='email'
                     onChange={handleChange}
+                    autoComplete='off'
                   />
                   <Box m={1} />
                   <TextField
@@ -139,6 +143,7 @@ const Contact = ({ sendMessage }) => {
                     className={classes.TextField}
                     name='subject'
                     onChange={handleChange}
+                    autoComplete='off'
                   />
                   <Box m={1} />
                   <TextareaAutosize
@@ -147,6 +152,7 @@ const Contact = ({ sendMessage }) => {
                     className={classes.textarea}
                     name='message'
                     onChange={handleChange}
+                    autoComplete='off'
                   />
                   <Box m={1} />
                   <Button className={classes.sendButton} onClick={handleSend}>

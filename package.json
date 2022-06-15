@@ -1,6 +1,7 @@
 {
   "name": "bts-web",
   "version": "0.1.0",
+  "homepage": "https://victkarangwa.github.io/bts-web/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.14",
@@ -10,6 +11,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
+    "gh-pages": "^2.2.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -30,7 +32,9 @@
     "postinstall": "npm run build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
